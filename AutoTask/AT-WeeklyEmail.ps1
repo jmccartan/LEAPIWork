@@ -1,5 +1,6 @@
 # weekly email of open and unassigned autotask tickets - 9/15/17
-# needs autotask credentials and o365 credentials  
+# needs autotask credentials and o365 credentials updated to function 
+# idea: add a list of open ticket counts by user to email (ranking)
 
 
 # internal function to build the XML query 
@@ -294,7 +295,6 @@ foreach ($userCurr in $ATUsers) {
         $credO365 = New-Object System.Management.Automation.PSCredential($usernameO365, $passwordO365)
     
         # NEED TO UNCOMMENT THE SEND EMAIL LINES BELOW FOR THE MAIL TO BE SENT - ALSO NEED TO UPDATE THE USERNAME@
-
         if ($unassignedCount -gt 0) {
             # Send-MailMessage -To $sendEmailTo -Cc "5418adcb.lightedge0.onmicrosoft.com@amer.teams.ms" -from USER@lightedge.com -Subject $subject -Body $body -BodyAsHtml -Attachments $unassignedCSV,$userCSV  -smtpserver smtp.office365.com -usessl -Credential $credO365 -Port 587 
         }
